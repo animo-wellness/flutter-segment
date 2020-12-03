@@ -1,3 +1,23 @@
+## 3.0.0
+### BREAKING CHANGE
+* removed branch io integration as the package is in the maintenance mode
+
+## 2.2.2
+* fixed segment-amplitude incorrect import path on iOS
+
+## 2.2.1
+* fixed segment-branch incorrect import path on iOS
+
+## 2.2.0
+* added `ENABLE_AMPLITUDE_INTEGRATION` configuration option
+* fixed segment-branch incorrect import path on iOS
+
+## 2.1.1
+* fixed `context` overwriting (using `segment.setContext(...)`) for `iOS` devices
+
+## 2.1.0
+* added `ENABLE_BRANCH_IO_INTEGRATION` configuration option
+
 ## 2.0.2
 * added `disable` and `enable` methods for Android
 * added `DEBUG` configuration option for Android (used on `AndroidManifest.xml`)

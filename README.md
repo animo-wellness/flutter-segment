@@ -1,5 +1,5 @@
 # Segment plugin
-![Pub Version](https://img.shields.io/pub/v/flutter_segment)
+[![Pub Version](https://img.shields.io/pub/v/flutter_segment)](https://pub.dev/packages/flutter_segment)
 
 Flutter plugin to support iOS, Android and Web sources at https://segment.com.
 
@@ -65,13 +65,19 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+
+## Migration from `v2.x` to `v3.x`
+In `v3.x` we removed branch io integration as the package is in the the maintenance mode and uses outdated dependencies.
+If you don't use `ENABLE_BRANCH_IO_INTEGRATION` you are good to go.
+If you want to continue using `ENABLE_BRANCH_IO_INTEGRATION` then use `v2.x` of this package.
+
 ## Installation
 Setup your Android, iOS and/or web sources as described at Segment.com and generate your write keys.
 
 Set your Segment write key and change the automatic event tracking (only for Android and iOS) on if you wish the library to take care of it for you.
 Remember that the application lifecycle events won't have any special context set for you by the time it is initialized.
 
-### Android
+### Android`
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.flutter_segment_example">
     <application>
@@ -80,6 +86,7 @@ Remember that the application lifecycle events won't have any special context se
         </activity>
         <meta-data android:name="com.claimsforce.segment.WRITE_KEY" android:value="YOUR_WRITE_KEY_GOES_HERE" />
         <meta-data android:name="com.claimsforce.segment.TRACK_APPLICATION_LIFECYCLE_EVENTS" android:value="false" />
+        <meta-data android:name="com.claimsforce.segment.ENABLE_AMPLITUDE_INTEGRATION" android:value="false" />
         <meta-data android:name="com.claimsforce.segment.DEBUG" android:value="false" />
     </application>
 </manifest>
@@ -96,6 +103,8 @@ Remember that the application lifecycle events won't have any special context se
 	<string>YOUR_WRITE_KEY_GOES_HERE</string>
 	<key>com.claimsforce.segment.TRACK_APPLICATION_LIFECYCLE_EVENTS</key>
 	<false/>
+	<key>com.claimsforce.segment.ENABLE_AMPLITUDE_INTEGRATION</key>
+    <false/>
 	[...]
 </dict>
 </plist>
